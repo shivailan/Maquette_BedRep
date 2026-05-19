@@ -56,118 +56,188 @@
         <div>
           <p class="text-[10px] font-bold uppercase text-slate-500 tracking-wider mb-2 px-2">Navigation</p>
           <nav class="space-y-1">
-            <button id="menu-btn-dashboard" onclick="openSubPage('dashboard')" class="w-full text-left p-3 rounded-xl bg-slate-800/60 text-xs font-bold text-sky-400 flex items-center gap-3 transition cursor-pointer border border-slate-800">📱 Tableau de bord</button>
-            <button id="menu-btn-history" onclick="openSubPage('history')" class="w-full text-left p-3 rounded-xl hover:bg-slate-900 text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-3 transition cursor-pointer border border-transparent">📊 Analytics & Sommeil</button>
-            <button id="menu-btn-reveil" onclick="openSubPage('reveil')" class="w-full text-left p-3 rounded-xl hover:bg-slate-900 text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-3 transition cursor-pointer border border-transparent">🌅 Option Réveil Dynamic</button>
-            <button id="menu-btn-urgence" onclick="openSubPage('urgence')" class="w-full text-left p-3 rounded-xl hover:bg-slate-900 text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-3 transition cursor-pointer border border-transparent">🚨 Sécurité & Urgences (New)</button>
-            <button id="menu-btn-telecommande" onclick="openSubPage('telecommande')" class="w-full text-left p-3 rounded-xl hover:bg-slate-900 text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-3 transition cursor-pointer border border-transparent">🛠️ Télécommande Capteurs</button>
+            <button id="menu-btn-dashboard" onclick="openSubPage('dashboard')" class="w-full text-left p-3 rounded-xl bg-slate-800/60 text-xs font-bold text-sky-400 flex items-center gap-3 transition cursor-pointer border border-slate-800">📱 Mon Lit (Dashboard)</button>
+            <button id="menu-btn-history" onclick="openSubPage('history')" class="w-full text-left p-3 rounded-xl hover:bg-slate-900 text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-3 transition cursor-pointer border border-transparent">📊 Analytics Sommeil</button>
+            <button id="menu-btn-reveil" onclick="openSubPage('reveil')" class="w-full text-left p-3 rounded-xl hover:bg-slate-900 text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-3 transition cursor-pointer border border-transparent">🌅 Réveil Matinal</button>
+            <button id="menu-btn-urgence" onclick="openSubPage('urgence')" class="w-full text-left p-3 rounded-xl hover:bg-slate-900 text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-3 transition cursor-pointer border border-transparent">🚨 Sécurité & Vigilance</button>
+            <button id="menu-btn-telecommande" onclick="openSubPage('telecommande')" class="w-full text-left p-3 rounded-xl hover:bg-slate-900 text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-3 transition cursor-pointer border border-transparent">🛠️ Télécommande Démo</button>
           </nav>
         </div>
       </div>
-      <div class="text-[10px] text-slate-600 text-center pt-4 border-t border-slate-800/60">BedRepublic WebSuite · v5.2</div>
+      <div class="text-[10px] text-slate-600 text-center pt-4 border-t border-slate-800/60">BedRepublic WebSuite · v6.1</div>
     </aside>
 
     <main class="flex-1 p-4 md:p-6 lg:p-8 overflow-x-hidden">
 
-      <div id="page-dashboard" class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 w-full items-stretch">
-        <section id="tab-confort" class="bg-slate-900/30 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-5 w-full h-full min-h-[520px]">
-          <div><h2 class="heading text-xl font-bold text-slate-100 flex items-center gap-2">🛏 nighttime Confort</h2><p class="text-xs text-slate-400 mt-1">Cliquez sur un boudin pour modifier la fermeté</p></div>
-          <div class="grid grid-cols-2 gap-4 p-5 bg-slate-950/60 border border-slate-800/60 rounded-2xl relative shadow-inner w-full flex-1 items-stretch"><div class="absolute left-1/2 top-4 bottom-4 w-px bg-slate-800/40 -translate-x-1/2"></div><div id="bedLeft" class="space-y-2 flex-1 flex flex-col justify-center pt-2"></div><div id="bedRight" class="space-y-2 flex-1 flex flex-col justify-center pt-2"></div></div>
+      <div id="page-dashboard" class="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full items-stretch">
+        
+        <section id="tab-confort" class="lg:col-span-6 bg-slate-900/30 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-5 w-full h-full min-h-[500px]">
+          <div>
+            <h2 class="heading text-xl font-bold text-slate-100 flex items-center gap-2">🛏️ Mon Confort Ergonomique</h2>
+            <p class="text-xs text-slate-400 mt-1">Ajustez la fermeté pneumatique de vos boudins indépendamment</p>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-4 p-5 bg-slate-950/60 border border-slate-800/60 rounded-2xl relative shadow-inner w-full flex-1 items-stretch">
+            <div class="absolute left-1/2 top-4 bottom-4 w-px bg-slate-800/40 -translate-x-1/2"></div>
+            <div class="space-y-2 flex flex-col justify-between">
+              <h3 class="text-center font-bold text-xs uppercase tracking-widest text-sky-400 border-b border-slate-900 pb-1">Côté Gauche</h3>
+              <div id="bedLeft" class="space-y-2 flex-1 flex flex-col justify-center pt-2"></div>
+            </div>
+            <div class="space-y-2 flex flex-col justify-between">
+              <h3 class="text-center font-bold text-xs uppercase tracking-widest text-indigo-400 border-b border-slate-900 pb-1">Côté Droite</h3>
+              <div id="bedRight" class="space-y-2 flex-1 flex flex-col justify-center pt-2"></div>
+            </div>
+          </div>
           <button onclick="quickSyncAll()" class="w-full bg-slate-900 hover:bg-slate-800 text-slate-300 font-semibold py-3 rounded-xl text-xs border border-slate-800 transition">Tout égaliser à 100</button>
         </section>
-        <section id="tab-corps" class="bg-slate-900/30 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-5 w-full h-full flex flex-col"><div id="card-corps-header"><h2 class="heading text-xl font-bold text-slate-100">🗺️ Cartographie Live</h2><p class="text-xs text-slate-400 mt-1">Analyse répartie des zones d'appui</p></div><div class="bg-slate-950/80 rounded-xl p-3 border border-slate-800 flex justify-around text-center text-xs w-full shadow-inner"><div><span class="text-slate-500 block uppercase font-bold text-[10px]">Position G.</span><span id="txtPosG" class="font-extrabold text-sky-400 text-sm">Sur le côté 🌙</span></div><div class="w-px bg-slate-800"></div><div><span class="text-slate-500 block uppercase font-bold text-[10px]">Position D.</span><span id="txtPosD" class="font-extrabold text-indigo-400 text-sm">Sur le dos ✨</span></div></div><div id="uiPressureMapVisual" class="w-full flex-1 flex flex-col justify-center"></div></section>
-        <section id="tab-nuit" class="bg-slate-900/30 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-5 w-full h-full flex flex-col">
-          <div><h2 class="heading text-xl font-bold text-slate-100">📊 Signes Vitaux</h2><p class="text-xs text-slate-400 mt-1">Constantes biométriques calculées</p></div>
-          <div id="vitalCardScore" class="bg-gradient-to-b from-slate-950 to-indigo-950/20 border border-slate-800 p-5 rounded-2xl text-center shadow-inner"><span class="text-xs font-bold text-indigo-400 uppercase tracking-wider block">Score Global</span><span id="uiSleepScoreText" class="heading text-6xl font-black block text-slate-200 mt-1">88<span class="text-sm font-normal text-slate-600">/100</span></span></div>
-          <div class="grid grid-cols-2 gap-4 w-full">
-            <div id="cardVitalHeart" class="bg-slate-950/60 border border-slate-800 p-4 rounded-xl shadow-inner"><span class="text-xs text-slate-500 block font-medium">Pouls</span><span class="text-2xl font-black block text-emerald-400 mt-1 mono" id="uiHeartRateContainer"><span id="uiHeartRate">69</span> <span class="text-xs font-normal text-slate-600">BPM</span></span></div>
-            <div id="cardVitalResp" class="bg-slate-950/60 border border-slate-800 p-4 rounded-xl shadow-inner"><span class="text-xs text-slate-500 block font-medium">🫁 Respiration</span><span class="text-2xl font-black block text-sky-400 mt-1 mono" id="uiRespirationContainer"><span id="uiRespiration">14</span> <span class="text-xs font-normal text-slate-600">/min</span></span></div>
+
+        <section id="tab-corps" class="lg:col-span-6 bg-slate-900/30 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-5 w-full h-full flex flex-col">
+          <div>
+            <h2 class="heading text-xl font-bold text-slate-100">🗺️ Cartographie Live & Signes Vitaux</h2>
+            <p class="text-xs text-slate-400 mt-1">Suivi morphologique et biométrique instantané du couchage</p>
           </div>
-          <div class="bg-slate-950/50 border border-slate-800 p-4 rounded-xl text-xs text-slate-400 shadow-sm" id="uiCoachingMessage">Le système conseille de raffermir le boudin Épaules Gauche à 105.</div>
+          
+          <div class="bg-slate-950/80 rounded-xl p-3 border border-slate-800 flex justify-around text-center text-xs w-full shadow-inner">
+            <div><span class="text-slate-500 block uppercase font-bold text-[10px]">Position G.</span><span id="txtPosG" class="font-extrabold text-sky-400 text-sm">Sur le côté 🌙</span></div>
+            <div class="w-px bg-slate-800"></div>
+            <div><span class="text-slate-500 block uppercase font-bold text-[10px]">Position D.</span><span id="txtPosD" class="font-extrabold text-indigo-400 text-sm">Sur le dos ✨</span></div>
+          </div>
+
+          <div id="uiPressureMapVisual" class="w-full flex-1 flex flex-col justify-center"></div>
+
+          <div class="grid grid-cols-2 gap-4 w-full pt-2" id="liveMiniVitals">
+            <div id="cardVitalHeart" class="bg-slate-950/60 border border-slate-800/80 p-3.5 rounded-xl shadow-inner flex justify-between items-center">
+              <div><span class="text-[10px] text-slate-500 block font-medium">Pouls</span><span class="text-xl font-black block text-emerald-400 mt-0.5 mono" id="uiHeartRateContainer"><span id="uiHeartRate">69</span> <span class="text-[10px] font-normal text-slate-600">BPM</span></span></div>
+              <span class="text-xl">❤️</span>
+            </div>
+            <div id="cardVitalResp" class="bg-slate-950/60 border border-slate-800/80 p-3.5 rounded-xl shadow-inner flex justify-between items-center">
+              <div><span class="text-[10px] text-slate-500 block font-medium">Respiration</span><span class="text-xl font-black block text-sky-400 mt-0.5 mono" id="uiRespirationContainer"><span id="uiRespiration">14</span> <span class="text-[10px] font-normal text-slate-600">/min</span></span></div>
+              <span class="text-xl">🫁</span>
+            </div>
+          </div>
+          <div class="bg-slate-950/50 border border-slate-800 p-3 rounded-xl text-[11px] text-slate-400 shadow-sm text-center" id="uiCoachingMessage">Analyse posturale stable. Le lit régule votre confort de manière optimale.</div>
         </section>
       </div>
 
       <div id="page-history" class="hidden max-w-4xl mx-auto bg-slate-900/60 border border-slate-800 rounded-3xl p-6 space-y-6 shadow-2xl backdrop-blur-md">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-4 gap-3">
-          <div><h2 class="heading text-xl font-bold text-slate-100">📊 Analytics Sommeil</h2><p class="text-xs text-slate-400 mt-0.5">Données consolidées de la mémoire flash</p></div>
-          <div class="flex items-center gap-2">
-            <div class="bg-slate-950 p-1 rounded-xl border border-slate-800 flex text-xs">
-              <button id="btnHistoryDay" onclick="toggleHistoryScope('day')" class="px-4 py-1.5 rounded-lg bg-sky-500 text-slate-950 font-bold cursor-pointer">Quotidien</button>
-              <button id="btnHistoryWeek" onclick="toggleHistoryScope('week')" class="px-4 py-1.5 rounded-lg text-slate-400 font-medium cursor-pointer">Semaine</button>
+        <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+          <div>
+            <h2 class="heading text-xl font-bold text-slate-100">📊 Analytics & Historique Sommeil</h2>
+            <p class="text-xs text-slate-400 mt-0.5">Cliquez directement sur un jour de la semaine pour charger son bilan</p>
+          </div>
+          <button onclick="openSubPage('dashboard')" class="lg:hidden text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-2 rounded-xl border border-slate-700 font-bold transition">✕ Fermer</button>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-slate-950/40 p-5 border border-slate-800 rounded-2xl shadow-inner">
+            <div class="h-40 flex items-end justify-between gap-2 border-b border-slate-800 pb-2 px-2">
+              <div onclick="selectHistoryDay('Lun', 72, '1h45m', '5h10m', '1h15m', '0h35m', [5, 20, 20, 15, 10, 25, 5])" class="flex-1 flex flex-col items-center gap-2 h-full justify-end cursor-pointer group">
+                <div id="bar-Lun" class="w-full bg-slate-800 h-[72%] rounded-t-lg transition-all flex items-end justify-center pb-1.5 text-[10px] font-bold text-slate-400">72</div>
+                <span class="text-[10px] text-slate-500 font-medium">Lun</span>
+              </div>
+              <div onclick="selectHistoryDay('Mar', 80, '2h05m', '4h30m', '1h50m', '0h20m', [3, 22, 25, 10, 15, 20, 5])" class="flex-1 flex flex-col items-center gap-2 h-full justify-end cursor-pointer group">
+                <div id="bar-Mar" class="w-full bg-slate-800 h-[80%] rounded-t-lg transition-all flex items-end justify-center pb-1.5 text-[10px] font-bold text-slate-400">80</div>
+                <span class="text-[10px] text-slate-500 font-medium">Mar</span>
+              </div>
+              <div onclick="selectHistoryDay('Mer', 65, '1h10m', '5h40m', '0h55m', '1h05m', [15, 30, 10, 20, 5, 10, 10])" class="flex-1 flex flex-col items-center gap-2 h-full justify-end cursor-pointer group">
+                <div id="bar-Mer" class="w-full bg-slate-800 h-[65%] rounded-t-lg transition-all flex items-end justify-center pb-1.5 text-[10px] font-bold text-slate-400">65</div>
+                <span class="text-[10px] text-slate-500 font-medium">Mer</span>
+              </div>
+              <div onclick="selectHistoryDay('Jeu', 85, '2h30m', '4h15m', '2h00m', '0h15m', [2, 18, 30, 15, 20, 12, 3])" class="flex-1 flex flex-col items-center gap-2 h-full justify-end cursor-pointer group">
+                <div id="bar-Jeu" class="w-full bg-slate-800 h-[85%] rounded-t-lg transition-all flex items-end justify-center pb-1.5 text-[10px] font-bold text-slate-400">85</div>
+                <span class="text-[10px] text-slate-500 font-medium">Jeu</span>
+              </div>
+              <div onclick="selectHistoryDay('Ven', 91, '3h02m', '3h50m', '2h10m', '0h10m', [1, 15, 35, 12, 22, 13, 2])" class="flex-1 flex flex-col items-center gap-2 h-full justify-end cursor-pointer group">
+                <div id="bar-Ven" class="w-full bg-slate-800 h-[91%] rounded-t-lg transition-all flex items-end justify-center pb-1.5 text-[10px] font-bold text-slate-400">91</div>
+                <span class="text-[10px] text-slate-500 font-medium">Ven</span>
+              </div>
+              <div onclick="selectHistoryDay('Sam', 88, '2h15m', '4h22m', '1h45m', '0h28m', [5, 25, 20, 15, 15, 15, 5])" class="flex-1 flex flex-col items-center gap-2 h-full justify-end cursor-pointer group">
+                <div id="bar-Sam" class="w-full bg-sky-500/20 border border-sky-400/40 h-[88%] rounded-t-lg transition-all flex items-end justify-center pb-1.5 text-[10px] font-extrabold text-sky-400">88</div>
+                <span class="text-[10px] text-sky-400 font-bold">Sam</span>
+              </div>
+              <div onclick="selectHistoryDay('Dim', 78, '1h50m', '4h55m', '1h20m', '0h40m', [8, 20, 15, 25, 10, 14, 8])" class="flex-1 flex flex-col items-center gap-2 h-full justify-end cursor-pointer group">
+                <div id="bar-Dim" class="w-full bg-slate-800 h-[78%] rounded-t-lg transition-all flex items-end justify-center pb-1.5 text-[10px] font-bold text-slate-400">78</div>
+                <span class="text-[10px] text-slate-500 font-medium">Dim</span>
+              </div>
             </div>
-            <button onclick="openSubPage('dashboard')" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-2 rounded-xl border border-slate-700 font-bold transition">✕ Fermer</button>
           </div>
         </div>
-        <div id="historyScopeDay" class="space-y-6">
+
+        <div class="space-y-6 bg-slate-950/30 p-5 border border-slate-800/80 rounded-2xl">
+          <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+            <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">🔬 Analyse Nocturne : <span id="lblActiveDay" class="text-sky-400">Samedi</span></h3>
+            <span class="text-xs font-extrabold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">Score de nuit : <span id="lblActiveScore">88</span>/100</span>
+          </div>
+          
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div class="bg-slate-950/60 p-3 border border-slate-800 rounded-xl text-center"><span class="text-[10px] text-slate-400 uppercase">💤 Profond</span><span class="text-base font-bold text-emerald-400 mt-0.5 block">2h15m</span></div>
-            <div class="bg-slate-950/60 p-3 border border-slate-800 rounded-xl text-center"><span class="text-[10px] text-slate-400 uppercase">💤 Léger</span><span class="text-base font-bold text-sky-400 mt-0.5 block">4h22m</span></div>
-            <div class="bg-slate-950/60 p-3 border border-slate-800 rounded-xl text-center"><span class="text-[10px] text-slate-400 uppercase">🧠 REM</span><span class="text-base font-bold text-purple-400 mt-0.5 block">1h45m</span></div>
-            <div class="bg-slate-950/60 p-3 border border-slate-800 rounded-xl text-center"><span class="text-[10px] text-slate-400 uppercase">👁️ Éveillé</span><span class="text-base font-bold text-amber-400 mt-0.5 block">0h28m</span></div>
+            <div class="bg-slate-950/60 p-3 border border-slate-800 rounded-xl text-center"><span class="text-[10px] text-slate-400 uppercase font-medium">💤 Profond</span><span id="cycleProfond" class="text-base font-bold text-emerald-400 mt-0.5 block">2h15m</span></div>
+            <div class="bg-slate-950/60 p-3 border border-slate-800 rounded-xl text-center"><span class="text-[10px] text-slate-400 uppercase font-medium">💤 Léger</span><span id="cycleLeger" class="text-base font-bold text-sky-400 mt-0.5 block">4h22m</span></div>
+            <div class="bg-slate-950/60 p-3 border border-slate-800 rounded-xl text-center"><span class="text-[10px] text-slate-400 uppercase font-medium">🧠 REM / Paradoxal</span><span id="cycleRem" class="text-base font-bold text-purple-400 mt-0.5 block">1h45m</span></div>
+            <div class="bg-slate-950/60 p-3 border border-slate-800 rounded-xl text-center"><span class="text-[10px] text-slate-400 uppercase font-medium">👁️ Éveillé</span><span id="cycleEveille" class="text-base font-bold text-amber-400 mt-0.5 block">0h28m</span></div>
           </div>
-          <div class="bg-slate-950/40 p-4 border border-slate-800 rounded-2xl space-y-3 shadow-inner">
-            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Chronologie Évolutive de la Nuit (23h00 - 07h00)</h4>
-            <div class="w-full bg-slate-900 h-10 rounded-xl flex overflow-hidden border border-slate-800">
-              <div class="bg-amber-400 h-full w-[5%]"></div><div class="bg-sky-400 h-full w-[25%]"></div><div class="bg-emerald-500 h-full w-[20%]"></div><div class="bg-sky-400 h-full w-[15%]"></div><div class="bg-purple-500 h-full w-[15%]"></div><div class="bg-emerald-500 h-full w-[15%]"></div><div class="bg-amber-400 h-full w-[5%]"></div>
-            </div>
-            <div class="flex justify-between text-[10px] text-slate-500 px-1"><span>23:00</span><span>01:00</span><span>03:00</span><span>05:00</span><span>07:00</span></div>
-          </div>
-        </div>
-        <div id="historyScopeWeek" class="hidden space-y-4">
-          <div class="bg-slate-950/40 p-5 border border-slate-800 rounded-2xl shadow-inner space-y-6">
-            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Rapport Hebdomadaire (Scores sur 100)</h4>
-            <div class="h-44 flex items-end justify-between gap-2 border-b border-slate-800 pb-2 px-2">
-              <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end"><div class="w-full bg-slate-800/80 h-[72%] rounded-t-lg flex items-end justify-center pb-2 text-[10px] font-bold text-sky-400">72</div><span class="text-[10px] text-slate-500">Lun</span></div>
-              <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end"><div class="w-full bg-slate-800/80 h-[80%] rounded-t-lg flex items-end justify-center pb-2 text-[10px] font-bold text-sky-400">80</div><span class="text-[10px] text-slate-500">Mar</span></div>
-              <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end"><div class="w-full bg-slate-800/80 h-[65%] rounded-t-lg flex items-end justify-center pb-2 text-[10px] font-bold text-sky-400">65</div><span class="text-[10px] text-slate-500">Mer</span></div>
-              <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end"><div class="w-full bg-slate-800/80 h-[85%] rounded-t-lg flex items-end justify-center pb-2 text-[10px] font-bold text-sky-400">85</div><span class="text-[10px] text-slate-500">Jeu</span></div>
-              <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end"><div class="w-full bg-slate-800/80 h-[91%] rounded-t-lg flex items-end justify-center pb-2 text-[10px] font-bold text-sky-400">91</div><span class="text-[10px] text-slate-500">Ven</span></div>
-              <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end"><div class="w-full bg-sky-500/20 border border-sky-400/40 h-[88%] rounded-t-lg flex items-end justify-center pb-2 text-[10px] font-extrabold text-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.1)]">88</div><span class="text-[10px] text-sky-400 font-bold">Sam</span></div>
-              <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end"><div class="w-full bg-slate-800/80 h-[78%] rounded-t-lg flex items-end justify-center pb-2 text-[10px] font-bold text-sky-400">78</div><span class="text-[10px] text-slate-500">Dim</span></div>
-            </div>
+
+          <div class="bg-slate-950/60 p-4 border border-slate-800 rounded-2xl space-y-3 shadow-inner">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Structure des Cycles de Sommeil (23h00 - 07h00)</h4>
+            <div id="uiTimelineBars" class="w-full bg-slate-900 h-10 rounded-xl flex overflow-hidden border border-slate-800"></div>
+            <div class="flex justify-between text-[10px] text-slate-500 px-1"><span>23:00 (Couché)</span><span>01:00</span><span>03:00</span><span>05:00</span><span>07:00 (Levé)</span></div>
           </div>
         </div>
       </div>
 
       <div id="page-reveil" class="hidden max-w-2xl mx-auto bg-slate-900/60 border border-slate-800 rounded-3xl p-6 space-y-6 shadow-2xl backdrop-blur-md">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-3"><h2 class="heading text-xl font-bold text-slate-100 flex items-center gap-2">🌅 Réveil Wake-up Dynamic</h2><button onclick="openSubPage('dashboard')" class="text-xs bg-slate-800 text-sky-400 px-3 py-1.5 rounded-lg border border-slate-700 font-bold">⬅️ Dashboard</button></div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-slate-950/60 p-5 rounded-2xl border border-slate-800 shadow-inner"><input type="time" value="07:30" class="bg-transparent heading text-5xl font-black text-sky-400 outline-none text-center"><div class="flex flex-col gap-2"><span class="text-[10px] font-bold text-slate-500 uppercase text-center md:text-left">Cible Mécanique</span><div class="flex gap-2"><button id="sideAlarmG" onclick="toggleAlarmSide('G')" class="flex-1 text-xs py-2 rounded-xl border border-sky-500 bg-sky-500/20 text-sky-400 font-bold uppercase">Place Gauche</button><button id="sideAlarmD" onclick="toggleAlarmSide('D')" class="flex-1 text-xs py-2 rounded-xl border border-slate-800 bg-slate-900 text-slate-500 font-bold uppercase">Place Droite</button></div></div></div>
-        <div class="space-y-3">
-          <div onclick="selectAlarmMode('massage')" id="mode-massage" class="p-4 rounded-xl border border-sky-500/30 bg-sky-500/5 cursor-pointer flex items-center justify-between"><div class="flex items-center gap-4"><span class="text-2xl">💆</span><div><span class="text-xs font-bold block text-slate-200">Massage Tonique Circulatoire</span><span class="text-[10px] text-slate-500">Stimulation sous les jambes</span></div></div><div class="w-1.5 h-1.5 rounded-full bg-sky-400 indicator-dot"></div></div>
-          <div onclick="selectAlarmMode('tilt')" id="mode-tilt" class="p-4 rounded-xl border border-slate-800 bg-slate-950/40 cursor-pointer flex items-center justify-between"><div class="flex items-center gap-4"><span class="text-2xl">📐</span><div><span class="text-xs font-bold block text-slate-300">Inclinaison Assise Progressive</span><span class="text-[10px] text-slate-500">Redressement mécanique de la tête</span></div></div></div>
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <h2 class="heading text-xl font-bold text-slate-100 flex items-center gap-2">🌅 Réveil Wake-up Dynamic</h2>
         </div>
-        <button onclick="runAlarmTest()" id="testAlarmBtn" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-3.5 rounded-xl text-xs transition">Lancer le test live</button>
+        <p class="text-xs text-slate-400 leading-relaxed">Le matelas module sa pression pour un réveil cinématique en douceur sans perturber le sommeil de votre conjoint.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-slate-950/60 p-5 rounded-2xl border border-slate-800 shadow-inner">
+           <input type="time" value="07:30" class="bg-transparent heading text-5xl font-black text-sky-400 outline-none text-center">
+           <div class="flex flex-col gap-2">
+             <span class="text-[10px] font-bold text-slate-500 uppercase text-center md:text-left">Zone Cible Pneumatique</span>
+             <div class="flex gap-2">
+               <button id="sideAlarmG" onclick="toggleAlarmSide('G')" class="flex-1 text-xs py-2 rounded-xl border border-sky-500 bg-sky-500/20 text-sky-400 font-bold uppercase transition">Place Gauche</button>
+               <button id="sideAlarmD" onclick="toggleAlarmSide('D')" class="flex-1 text-xs py-2 rounded-xl border border-slate-800 bg-slate-900 text-slate-500 font-bold uppercase transition">Place Droite</button>
+             </div>
+           </div>
+        </div>
+        <div class="space-y-3">
+          <div onclick="selectAlarmMode('massage')" id="mode-massage" class="p-4 rounded-xl border border-sky-500/30 bg-sky-500/5 cursor-pointer flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-4"><span class="text-2xl">💆</span><div><span class="text-xs font-bold block text-slate-200">Massage Tonique Circulatoire</span><span class="text-[10px] text-slate-500">Ondes de pression alternées sous les membres inférieurs</span></div></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-sky-400 indicator-dot shadow-[0_0_6px_#38bdf8]"></div>
+          </div>
+          <div onclick="selectAlarmMode('tilt')" id="mode-tilt" class="p-4 rounded-xl border border-slate-800 bg-slate-950/40 cursor-pointer flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-4"><span class="text-2xl">📐</span><div><span class="text-xs font-bold block text-slate-300">Inclinaison Assise Progressive</span><span class="text-[10px] text-slate-500">Redressement en pente douce de la zone tête / haut du dos</span></div></div>
+          </div>
+        </div>
+        <button onclick="runAlarmTest()" id="testAlarmBtn" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-3.5 rounded-xl text-xs transition shadow-lg cursor-pointer">Lancer le test cinématique live</button>
       </div>
 
       <div id="page-urgence" class="hidden max-w-xl mx-auto bg-slate-900/60 border border-slate-800 rounded-3xl p-6 space-y-5 shadow-2xl backdrop-blur-md">
         <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-          <h2 class="heading text-xl font-bold text-red-400 flex items-center gap-2">🚨 Sécurité & Contact d'Urgence</h2>
-          <button onclick="openSubPage('dashboard')" class="text-xs bg-slate-800 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 font-bold transition">⬅️ Retour</button>
+          <h2 class="heading text-xl font-bold text-red-400 flex items-center gap-2">🚨 Dispositif de Sécurité & Vigilance</h2>
         </div>
-        <p class="text-xs text-slate-400 leading-relaxed">Si les capteurs de pression détectent un corps allongé mais que le système n'enregistre **plus aucun pouls ni respiration** pendant plus de 45 secondes, une alerte SMS automatique est envoyée à votre contact de confiance.</p>
+        <p class="text-xs text-slate-400 leading-relaxed">Système d'urgence : Si le lit enregistre un poids continu mais qu'**aucun pouls ni respiration** n'est capté pendant 45 secondes, un canal d'alerte SMS automatisé se déclenche.</p>
         
         <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800 space-y-3 shadow-inner">
           <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">🛡️ Fiche de l'Ange Gardien</h3>
           <div class="grid grid-cols-2 gap-2">
-            <div><label class="text-[10px] text-slate-500 block mb-1">Prénom</label><input type="text" id="guardianPre" value="Jean" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs font-medium text-slate-200 outline-none focus:border-sky-500"></div>
-            <div><label class="text-[10px] text-slate-500 block mb-1">Nom</label><input type="text" id="guardianNom" value="Dupont" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs font-medium text-slate-200 outline-none focus:border-sky-500"></div>
+            <div><label class="text-[10px] text-slate-500 block mb-1">Prénom</label><input type="text" id="guardianPre" value="Jean" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs font-medium text-slate-200 outline-none"></div>
+            <div><label class="text-[10px] text-slate-500 block mb-1">Nom</label><input type="text" id="guardianNom" value="Dupont" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs font-medium text-slate-200 outline-none"></div>
           </div>
-          <div><label class="text-[10px] text-slate-500 block mb-1">Numéro de Téléphone (SMS d'alerte)</label><input type="tel" id="guardianTel" value="+33 6 12 34 56 78" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs font-medium text-slate-200 outline-none focus:border-sky-500"></div>
-          <button onclick="alert('Contact de confiance enregistré et synchronisé localement dans la puce du lit.')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-2 rounded-lg border border-slate-700 font-bold transition">💾 Sauvegarder le contact</button>
+          <div><label class="text-[10px] text-slate-500 block mb-1">Numéro Mobile (Alerte SMS)</label><input type="tel" id="guardianTel" value="+33 6 12 34 56 78" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-xs font-medium text-slate-200 outline-none"></div>
+          <button onclick="alert('Contact de vigilance enregistré avec succès dans la mémoire flash locale.')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-2 rounded-lg border border-slate-700 font-bold transition">💾 Sauvegarder le contact</button>
         </div>
       </div>
 
       <div id="page-telecommande" class="hidden max-w-2xl mx-auto bg-slate-900/60 border border-slate-800 rounded-3xl p-6 space-y-5 shadow-2xl backdrop-blur-md">
         <div class="flex items-center justify-between border-b border-slate-800 pb-3">
           <h2 class="heading text-xl font-bold text-slate-100 flex items-center gap-2">🛠️ Télécommande de Présentation</h2>
-          <button onclick="openSubPage('dashboard')" class="text-xs bg-slate-800 text-sky-400 px-3 py-1.5 rounded-lg border border-slate-700 font-bold">⬅️ Retour</button>
         </div>
-        <p class="text-xs text-slate-400 leading-relaxed">Simulez à chaud les variables biométriques du lit. Le scénario critique permet de déclencher l'alerte de l'ange gardien :</p>
-        <div class="grid grid-cols-2 gap-3 text-center">
+        <p class="text-xs text-slate-400 leading-relaxed">Pilotez à chaud l'état mécanique des capteurs du matelas double pour faire varier l'interface graphique devant votre public :</p>
+        <div class="grid grid-cols-2 gap-4 text-center">
           <button onclick="demoChangeScenario('empty')" class="bg-slate-950 hover:bg-slate-900 text-slate-300 text-xs py-4 rounded-xl border border-slate-800 font-semibold shadow-inner transition">🛏️ Simuler Lit Vide (Standby)</button>
-          <button onclick="demoChangeScenario('both')" class="bg-slate-950 hover:bg-slate-900 text-slate-300 text-xs py-4 rounded-xl border border-slate-800 font-semibold shadow-inner transition">👥 Double Présence Normale</button>
-          <button onclick="demoChangeScenario('left-side')" class="bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 text-xs py-4 rounded-xl border border-sky-500/20 font-semibold transition shadow-md">⬅️ Gauche Occupé (Sommeil)</button>
-          <button onclick="demoTriggerCriticalAlert()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 text-xs py-4 rounded-xl border border-red-500/30 font-extrabold transition shadow-lg shadow-red-500/5">⚠️ DECLENCHER SCENARIO CRITIQUE (Alerte)</button>
+          <button onclick="demoChangeScenario('both')" class="bg-slate-950 hover:bg-slate-900 text-slate-300 text-xs py-4 rounded-xl border border-slate-800 font-semibold shadow-inner transition">👥 Double Présence Active</button>
+          <button onclick="demoChangeScenario('left-side')" class="bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 text-xs py-4 rounded-xl border border-sky-500/20 font-semibold transition shadow-md">⬅️ Gauche Occupé (Côté)</button>
+          <button onclick="demoTriggerCriticalAlert()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 text-xs py-4 rounded-xl border border-red-500/30 font-extrabold transition shadow-lg">⚠️ DÉCLENCHER SCÉNARIO CRITIQUE (Urgence)</button>
         </div>
       </div>
 
@@ -175,18 +245,18 @@
   </div>
 
   <nav id="mobileNav" class="lg:hidden fixed bottom-0 left-0 right-0 bg-slate-900/95 border-t border-slate-800 rounded-t-3xl py-3 px-6 grid grid-cols-3 text-center z-40 shadow-2xl">
-    <button onclick="switchMobileTab('confort')" id="nav-confort" class="flex flex-col items-center justify-center gap-1 text-sky-400 transition">
-      <span class="text-xl">🛏️</span><span class="text-[10px] font-bold">Confort</span>
+    <button onclick="openSubPage('dashboard')" id="nav-confort" class="flex flex-col items-center justify-center gap-1 text-sky-400 transition cursor-pointer">
+      <span class="text-xl">🛏️</span><span class="text-[10px] font-bold">Mon Lit</span>
     </button>
-    <button onclick="switchMobileTab('corps')" id="nav-corps" class="flex flex-col items-center justify-center gap-1 text-slate-500 transition">
-      <span class="text-xl">🗺️</span><span class="text-[10px] font-bold">Mon Corps</span>
+    <button onclick="openSubPage('telecommande')" id="nav-corps" class="flex flex-col items-center justify-center gap-1 text-slate-500 transition cursor-pointer">
+      <span class="text-xl">🛠️</span><span class="text-[10px] font-bold">Démo</span>
     </button>
-    <button onclick="switchMobileTab('nuit')" id="nav-nuit" class="flex flex-col items-center justify-center gap-1 text-slate-500 transition">
+    <button onclick="openSubPage('history')" id="nav-nuit" class="flex flex-col items-center justify-center gap-1 text-slate-500 transition cursor-pointer">
       <span class="text-xl">📊</span><span class="text-[10px] font-bold">Ma Nuit</span>
     </button>
   </nav>
 
-  <script>
+  <script {sandbox="allow-scripts"}>
     const zonesList = ["Tête", "Épaules", "Lombaires", "Bassin", "Cuisses", "Pieds"];
     const scenarios = {
       'empty': [72, 73, 75, 71, 74, 72, 73, 75, 71, 74],
@@ -197,7 +267,6 @@
     let activeMap = [...scenarios['both']];
     let leftBoudins = [100, 100, 100, 100, 100, 100];
     let rightBoudins = [100, 100, 100, 100, 100, 100];
-    let activeTab = 'confort';
     let alarmSide = 'G';
     let alarmMode = 'massage';
 
@@ -205,6 +274,7 @@
       renderBoudinsGrid();
       renderRadarView();
       handleResponsive();
+      selectHistoryDay('Sam', 88, '2h15m', '4h22m', '1h45m', '0h28m', [5, 25, 20, 15, 15, 15, 5]);
     };
 
     function toggleBurger(open) {
@@ -214,53 +284,62 @@
       else { bMenu.classList.add('-translate-x-full'); setTimeout(() => bMenu.classList.add('hidden'), 300); }
     }
 
+    // DISPATCHER DE PAGES UNIFIÉ PC / MOBILE
     function openSubPage(pageId) {
       toggleBurger(false);
       const pages = ['dashboard', 'history', 'reveil', 'urgence', 'telecommande'];
       pages.forEach(p => {
         document.getElementById(`page-${p}`).classList.add('hidden');
-        const btn = document.getElementById(`menu-btn-${p}`);
-        if(btn) btn.className = "w-full text-left p-3 rounded-xl hover:bg-slate-900 text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-3 transition cursor-pointer border border-transparent";
+        const sideBtn = document.getElementById(`menu-btn-${p}`);
+        if(sideBtn) sideBtn.className = "w-full text-left p-3 rounded-xl hover:bg-slate-900 text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-3 transition cursor-pointer border border-transparent";
       });
       
       document.getElementById(`page-${pageId}`).classList.remove('hidden');
-      const activeBtn = document.getElementById(`menu-btn-${pageId}`);
-      if(activeBtn) activeBtn.className = "w-full text-left p-3 rounded-xl bg-slate-800/60 text-xs font-bold text-sky-400 flex items-center gap-3 transition cursor-pointer border border-slate-800";
+      const activeSideBtn = document.getElementById(`menu-btn-${pageId}`);
+      if(activeSideBtn) activeSideBtn.className = "w-full text-left p-3 rounded-xl bg-slate-800/60 text-xs font-bold text-sky-400 flex items-center gap-3 transition cursor-pointer border border-slate-800";
 
-      const mobileNav = document.getElementById("mobileNav");
-      if (window.innerWidth < 1024) { mobileNav.style.display = (pageId === 'dashboard') ? 'grid' : 'none'; }
-    }
-
-    function toggleHistoryScope(scope) {
-      const btnDay = document.getElementById("btnHistoryDay");
-      const btnWeek = document.getElementById("btnHistoryWeek");
-      const blockDay = document.getElementById("historyScopeDay");
-      const blockWeek = document.getElementById("historyScopeWeek");
-      if (scope === 'day') {
-        blockDay.classList.remove('hidden'); blockWeek.classList.add('hidden');
-        btnDay.className = "px-4 py-1.5 rounded-lg bg-sky-500 text-slate-950 font-bold transition cursor-pointer";
-        btnWeek.className = "px-4 py-1.5 rounded-lg text-slate-400 font-medium transition cursor-pointer";
-      } else {
-        blockDay.classList.add('hidden'); blockWeek.classList.remove('hidden');
-        btnDay.className = "px-4 py-1.5 rounded-lg text-slate-400 font-medium transition cursor-pointer";
-        btnWeek.className = "px-4 py-1.5 rounded-lg bg-sky-500 text-slate-950 font-bold transition cursor-pointer";
+      // Gestion de la surbrillance de la barre du bas sur Mobile
+      if (window.innerWidth < 1024) {
+        const mobileNav = document.getElementById("mobileNav");
+        mobileNav.style.display = 'grid'; // Toujours visible sur mobile
+        
+        document.getElementById('nav-confort').className = (pageId === 'dashboard') ? "flex flex-col items-center justify-center gap-1 text-sky-400 transition cursor-pointer" : "flex flex-col items-center justify-center gap-1 text-slate-500 transition cursor-pointer";
+        document.getElementById('nav-corps').className = (pageId === 'telecommande') ? "flex flex-col items-center justify-center gap-1 text-sky-400 transition cursor-pointer" : "flex flex-col items-center justify-center gap-1 text-slate-500 transition cursor-pointer";
+        document.getElementById('nav-nuit').className = (pageId === 'history') ? "flex flex-col items-center justify-center gap-1 text-sky-400 transition cursor-pointer" : "flex flex-col items-center justify-center gap-1 text-slate-500 transition cursor-pointer";
       }
     }
 
-    function switchMobileTab(target) {
-      if (window.innerWidth >= 1024) return;
-      activeTab = target;
-      ['confort', 'corps', 'nuit'].forEach(t => {
-        const section = document.getElementById(`tab-${t}`);
-        const navBtn = document.getElementById(`nav-${t}`);
-        if (t === target) {
-          section.classList.remove('hidden');
-          navBtn.className = "flex flex-col items-center justify-center gap-1 text-sky-400 transition";
+    function selectHistoryDay(dayName, score, profond, leger, rem, eveille, gridWidths) {
+      const dictionnaireJours = { 'Lun': 'Lundi', 'Mar': 'Mardi', 'Mer': 'Mercredi', 'Jeu': 'Jeudi', 'Ven': 'Vendredi', 'Sam': 'Samedi', 'Dim': 'Dimanche' };
+      document.getElementById("lblActiveDay").textContent = dictionnaireJours[dayName] || dayName;
+      document.getElementById("lblActiveScore").textContent = score;
+      document.getElementById("cycleProfond").textContent = profond;
+      document.getElementById("cycleLeger").textContent = leger;
+      document.getElementById("cycleRem").textContent = rem;
+      document.getElementById("cycleEveille").textContent = eveille;
+
+      const jours = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
+      jours.forEach(j => {
+        const bar = document.getElementById(`bar-${j}`);
+        if(!bar) return;
+        if(j === dayName) {
+          bar.className = "w-full bg-sky-500/20 border-2 border-sky-400 h-[inherit] rounded-t-lg transition-all flex items-end justify-center pb-1.5 text-[10px] font-extrabold text-sky-400 shadow-[0_0_15px_rgba(56,189,248,0.2)]";
         } else {
-          section.classList.add('hidden');
-          navBtn.className = "flex flex-col items-center justify-center gap-1 text-slate-500 transition";
+          bar.className = "w-full bg-slate-800 hover:bg-slate-700/60 h-[inherit] rounded-t-lg transition-all flex items-end justify-center pb-1.5 text-[10px] font-bold text-slate-400 hover:text-sky-400";
         }
       });
+
+      const timelineContainer = document.getElementById("uiTimelineBars");
+      if(timelineContainer && gridWidths) {
+        timelineContainer.innerHTML = `
+          <div class="bg-amber-400 h-full transition-all duration-300" style="width: ${gridWidths[0]}%"></div>
+          <div class="bg-sky-400 h-full transition-all duration-300" style="width: ${gridWidths[1]}%"></div>
+          <div class="bg-emerald-500 h-full transition-all duration-300" style="width: ${gridWidths[2]}%"></div>
+          <div class="bg-sky-400 h-full transition-all duration-300" style="width: ${gridWidths[3]}%"></div>
+          <div class="bg-purple-500 h-full transition-all duration-300" style="width: ${gridWidths[4]}%"></div>
+          <div class="bg-emerald-500 h-full transition-all duration-300" style="width: ${gridWidths[5]}%"></div>
+          <div class="bg-amber-400 h-full transition-all duration-300" style="width: ${gridWidths[6]}%"></div>`;
+      }
     }
 
     function handleResponsive() {
@@ -268,11 +347,10 @@
       const bMenu = document.getElementById("burgerMenu");
       if (window.innerWidth >= 1024) {
         nav.classList.add('hidden'); bMenu.classList.remove('hidden', '-translate-x-full');
-        ['confort', 'corps', 'nuit'].forEach(t => document.getElementById(`tab-${t}`).classList.remove('hidden'));
       } else {
         nav.classList.remove('hidden'); bMenu.classList.add('hidden', '-translate-x-full');
-        switchMobileTab(activeTab);
       }
+      openSubPage('dashboard');
     }
     window.addEventListener('resize', handleResponsive);
 
@@ -288,7 +366,7 @@
     function buildBoudin(label, val, idx, side) {
       const div = document.createElement("div");
       div.id = `boudin-${side}-${idx}`;
-      div.className = `p-2.5 rounded-xl border transition-all text-center text-[10px] cursor-pointer w-full shadow-sm ${val > 105 ? 'bg-sky-500/20 border-sky-400 text-sky-300 font-bold shadow-[0_0_10px_rgba(56,189,248,0.1)]' : 'bg-slate-950/50 border-slate-800/80 text-slate-400'}`;
+      div.className = `p-2.5 rounded-xl border transition-all text-center text-[10px] cursor-pointer w-full shadow-sm active:scale-98 ${val > 105 ? 'bg-sky-500/20 border-sky-400 text-sky-300 font-bold shadow-[0_0_10px_rgba(56,189,248,0.1)]' : 'bg-slate-950/50 border-slate-800/80 text-slate-400'}`;
       div.innerHTML = `<span class="opacity-60 block text-[9px] mb-0.5">${label}</span><span class="mono font-bold text-[12px]">${val}</span>`;
       div.onclick = () => {
         let arr = side === 'left' ? leftBoudins : rightBoudins;
@@ -305,7 +383,7 @@
         html += `<div class="space-y-2"><h4 class="text-[10px] font-bold text-slate-400 text-center uppercase mb-3 border-b border-slate-900 pb-1 tracking-wider">${side}</h4>`;
         for(let i=0; i<5; i++) {
           const val = activeMap[i + (sIdx * 5)]; const isPressed = val > 101;
-          const style = isPressed ? "bg-red-500/10 text-red-400 border border-red-500/20" : "bg-emerald-500/5 text-emerald-400/70 border border-emerald-500/10";
+          const style = isPressed ? "bg-red-500/10 text-red-400 border border-red-500/20 shadow-[0_0_8px_rgba(239,68,68,0.05)]" : "bg-emerald-500/5 text-emerald-400/70 border border-emerald-500/10";
           html += `<div class="flex items-center justify-between px-3 py-2 rounded-xl ${style} text-xs"><span>${zonesList[i]}</span><div class="flex items-center gap-2"><span class="mono font-bold">${val}</span><div class="w-1.5 h-1.5 rounded-full ${isPressed ? 'bg-red-400 shadow-[0_0_6px_#f87171]' : 'bg-emerald-500'}"></div></div></div>`;
         }
         html += `</div>`;
@@ -348,16 +426,14 @@
     }
 
     function demoChangeScenario(key) {
-      // Nettoyer les styles de crise au cas où
-      document.getElementById("tab-nuit").className = "bg-slate-900/30 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-5 w-full h-full flex flex-col backdrop-blur-sm";
+      document.getElementById("tab-nuit").className = "lg:col-span-6 bg-slate-900/30 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-5 w-full h-full flex flex-col";
       document.getElementById("vitalCardScore").className = "bg-gradient-to-b from-slate-950 to-indigo-950/20 border border-slate-800 p-5 rounded-2xl text-center shadow-inner";
-      document.getElementById("uiSleepScoreText").innerHTML = `88<span class="text-sm font-normal text-slate-600">/100</span>`;
-      document.getElementById("uiHeartRateContainer").className = "text-2xl font-black block text-emerald-400 mt-1 mono";
-      document.getElementById("uiRespirationContainer").className = "text-2xl font-black block text-sky-400 mt-1 mono";
+      document.getElementById("uiHeartRateContainer").className = "text-xl font-black block text-emerald-400 mt-0.5 mono";
+      document.getElementById("uiRespirationContainer").className = "text-xl font-black block text-sky-400 mt-0.5 mono";
       document.getElementById("uiHeartRate").textContent = "69";
       document.getElementById("uiRespiration").textContent = "14";
-      document.getElementById("uiCoachingMessage").className = "bg-slate-950/50 border border-slate-800 p-4 rounded-xl text-xs text-slate-400 shadow-sm";
-      document.getElementById("uiCoachingMessage").textContent = "Le système conseille de raffermir le boudin Épaules Gauche à 105.";
+      document.getElementById("uiCoachingMessage").className = "bg-slate-950/50 border border-slate-800 p-3 rounded-xl text-[11px] text-slate-400 shadow-sm text-center";
+      document.getElementById("uiCoachingMessage").textContent = "Analyse posturale stable. Le lit régule votre confort de manière optimale.";
 
       activeMap = [...scenarios[key]]; renderRadarView();
       const tg = document.getElementById("txtPosG"); const td = document.getElementById("txtPosD");
@@ -367,39 +443,28 @@
       openSubPage('dashboard');
     }
 
-    // SCÉNARIO CRITIQUE MASSIVE (ALERTE MEDICALE DEMO)
     function demoTriggerCriticalAlert() {
       openSubPage('dashboard');
-      
-      // 1. Forcer le matelas à simuler un corps à gauche (Capteurs 0-4 écrasés)
       activeMap = [118, 124, 110, 115, 95, 72, 73, 75, 71, 74];
       renderRadarView();
-      
       document.getElementById("txtPosG").textContent = "IMMOBILE ⚠️";
       document.getElementById("txtPosD").textContent = "Vide";
-
-      // 2. Faire crasher les constantes vitales en direct à l'écran
       document.getElementById("uiHeartRate").textContent = "0";
       document.getElementById("uiRespiration").textContent = "0";
-      
-      // 3. Basculer les boîtes en Rouge Flash Alerte
-      document.getElementById("tab-nuit").className = "bg-red-950/20 border-2 border-red-500 rounded-3xl p-6 space-y-5 w-full h-full flex flex-col backdrop-blur-sm animate-pulse-red";
+      document.getElementById("tab-nuit").className = "lg:col-span-6 bg-red-950/20 border-2 border-red-500 rounded-3xl p-6 space-y-5 w-full h-full flex flex-col animate-pulse-red";
       document.getElementById("vitalCardScore").className = "bg-red-950/60 border border-red-500/40 p-5 rounded-2xl text-center shadow-inner";
-      document.getElementById("uiSleepScoreText").innerHTML = `<span class="text-red-500">CRITIQUE</span>`;
-      document.getElementById("uiHeartRateContainer").className = "text-2xl font-black block text-red-500 mt-1 mono";
-      document.getElementById("uiRespirationContainer").className = "text-2xl font-black block text-red-500 mt-1 mono";
+      document.getElementById("uiHeartRateContainer").className = "text-xl font-black block text-red-500 mt-0.5 mono";
+      document.getElementById("uiRespirationContainer").className = "text-xl font-black block text-red-500 mt-0.5 mono";
       
-      // 4. Modifier le message de Coaching par l'état d'urgence
       const gPre = document.getElementById("guardianPre").value;
       const gNom = document.getElementById("guardianNom").value;
       const gTel = document.getElementById("guardianTel").value;
-      
       const alertBox = document.getElementById("uiCoachingMessage");
-      alertBox.className = "bg-red-500/10 border border-red-500/30 p-4 rounded-xl text-xs text-red-400 font-bold shadow-md";
-      alertBox.innerHTML = `🚨 ALERTE : Absence de signaux vitaux détectée !<br>📲 SMS d'urgence envoyé à ton Ange Gardien : <strong>${gPre} ${gNom} (${gTel})</strong>.`;
+      alertBox.className = "bg-red-500/10 border border-red-500/30 p-3 rounded-xl text-[11px] text-red-400 font-bold shadow-md text-center";
+      alertBox.innerHTML = `🚨 ALERTE CRITIQUE : Absence de constantes vitales !<br>📲 SMS d'urgence envoyé à : <strong>${gPre} ${gNom} (${gTel})</strong>.`;
 
       setTimeout(() => {
-        alert(`🚨 SIMULATION URGENCE :\n\nMessage envoyé à ${gPre} ${gNom} :\n"BedRepublic Sécurité : Anomalie critique détectée sur le lit de l'utilisateur. Aucune respiration depuis 45s. Géolocalisation transmise."`);
+        alert(`🚨 SMS SENT TO ${gPre.toUpperCase()} :\n\n"BedRepublic Sécurité : Anomalie détectée. Absence de mouvements et de respiration de l'utilisateur. Secours prévenus."`);
       }, 1200);
     }
 
